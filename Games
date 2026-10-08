@@ -18,7 +18,7 @@
         <!-- Change these links to your uploaded .swf raw file links -->
         <button onclick="loadGame('https://dn721809.ca.archive.org/0/items/duck-life-3-evolution/Duck%20Life%203%20-%20Evolution.swf')">Duck Life</button>
         <button onclick="loadGame('https://dn710706.ca.archive.org/0/items/bloonstdseries/bloonstd4exp.swf')">Bloons TD 4</button>
-        <button onclick="loadGame(https://dn710706.ca.archive.org/0/items/bloonstdseries/bloonstd.swf)">Bloons TD 1</button>
+        <button onclick="loadGame('https://dn710706.ca.archive.org/0/items/bloonstdseries/bloonstd.swf')">Bloons TD 1</button>
     </div>
 
     <div id="player-container"></div>
