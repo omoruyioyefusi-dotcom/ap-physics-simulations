@@ -2,43 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flash Arcade</title>
+    <title>Flash Player</title>
     <style>
-        body, html { margin: 0; width: 100%; height: 100%; background: #111; color: white; font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        #menu { margin-bottom: 20px; }
-        button { padding: 10px 20px; margin: 0 5px; background: #333; color: white; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
-        button:hover { background: #555; }
-        #player-container { width: 800px; height: 600px; background: black; display: flex; justify-content: center; align-items: center; }
+        body, html { margin: 0; width: 100%; height: 100%; background: #111; display: flex; justify-content: center; align-items: center; }
+        #player { width: 800px; height: 600px; }
     </style>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 </head>
 <body>
-
-    <div id="menu">
-        <!-- Change these links to your uploaded .swf raw file links -->
-        <button onclick="loadGame('https://dn721809.ca.archive.org/0/items/duck-life-3-evolution/Duck%20Life%203%20-%20Evolution.swf')">Duck Life</button>
-        <button onclick="loadGame('https://dn710706.ca.archive.org/0/items/bloonstdseries/bloonstd4exp.swf')">Bloons TD 4</button>
-        <button onclick="loadGame('https://dn710706.ca.archive.org/0/items/bloonstdseries/bloonstd.swf')">Bloons TD 1</button>
-    </div>
-
-    <div id="player-container"></div>
-
+    <div id="player"></div>
     <script>
         let ruffle = window.RufflePlayer.newest();
-        let player = null;
-
-        function loadGame(swfUrl) {
-            let container = document.getElementById("player-container");
-            container.innerHTML = ""; // Clear out the old game
-            
-            player = ruffle.createPlayer();
-            player.style.width = "100%";
-            player.style.height = "100%";
-            container.appendChild(player);
-            
-            player.load(swfUrl);
-        }
+        let player = ruffle.createPlayer();
+        player.style.width = "100%";
+        player.style.height = "100%";
+        document.getElementById("player").appendChild(player);
+        
+        // Because the game is in the same folder, just type its name here:
+        player.load("game.swf");
     </script>
-
 </body>
 </html>
